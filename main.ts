@@ -46,16 +46,36 @@ function clearInput () {
 }
 
 function checkCode() {
-    compareLists();
+    if (compareLists()) {
+        locked = false
+        menue();
+    }else {
+        music.playTone(Note.C, music.beat())
+        clearInput();
+    }
+    
 }
 
 function compareLists() {
     if(code.length == myInput.length) {
         for(let i = 0; i < code.length; i++) {
-            if 
+            if (code[i] != myInput[i]) {
+                return false
+            }
         }
         return true
     }else {
         return false;
     }
+}
+
+function menue() {
+
+    basic.showLeds(`
+    . . . . .
+    . . . . #
+    . # . # .
+    . . # . .
+    . . . . .
+    `)
 }
