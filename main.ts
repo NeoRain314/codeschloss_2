@@ -11,12 +11,12 @@ clearInput();
 
 
 
-//input.onButtonPressed(Button.B, function () {
-//    if (locked) {
-//        myInput.push(0);
-//        led.plot(myInput.length - 1, 2)
-//    }
-//})
+input.onButtonPressed(Button.B, function () {
+    if (locked) {
+        myInput.push(0);
+        led.plot(myInput.length - 1, 2)
+    }
+})
 
 
 input.onPinPressed(TouchPin.P0, function () {
@@ -83,7 +83,24 @@ function compareLists() {
     }
 }
 
-function menue() {
+function right() {
+    basic.showLeds(`
+    # # # # #
+    # # # # .
+    # . # . #
+    # # . # #
+    # # # # #
+    `);
+    music.playTone(Note.C, music.beat())
+
+    basic.showLeds(`
+    . . . . .
+    . . . . #
+    . # . # .
+    . . # . .
+    . . . . .
+    `);
+    music.playTone(Note.C, music.beat())
 
     basic.showLeds(`
     # # # # #
@@ -91,6 +108,38 @@ function menue() {
     # . # . #
     # # . # #
     # # # # #
-    `)
+    `);
+    music.playTone(Note.C, music.beat())
+
+    basic.showLeds(`
+    . . . . .
+    . . . . #
+    . # . # .
+    . . # . .
+    . . . . .
+    `);
+    music.playTone(Note.C, music.beat())
+
+    basic.showLeds(`
+    # # # # #
+    # # # # .
+    # . # . #
+    # # . # #
+    # # # # #
+    `);
+    music.playTone(Note.C, music.beat())
+
+    basic.showLeds(`
+    . . . . .
+    . . . . .
+    . . . . .
+    . . . . .
+    . . . . .
+    `);
+}
+
+function menue() {
+    right();
+    
 }
 
